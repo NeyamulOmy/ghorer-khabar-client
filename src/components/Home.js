@@ -1,8 +1,9 @@
 import React from 'react';
+import banner from '../banner.jpg'
 const Home = () => {
     return (
         <div>
-            <p className='text-red-400'>Home</p>
+            <img src={banner} className='rounded' alt="" />
         </div>
     );
 };
