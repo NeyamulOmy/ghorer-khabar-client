@@ -5,13 +5,15 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyDSCiDYmOLh8-7ssaXRNTwgGNpF-GfrXRo",
-    authDomain: "ghorer-khabar-auth.firebaseapp.com",
-    projectId: "ghorer-khabar-auth",
-    storageBucket: "ghorer-khabar-auth.appspot.com",
-    messagingSenderId: "427675016145",
-    appId: "1:427675016145:web:6c1e414d788ef6d869def0"
+    apiKey: REACT_APP_apiKey,
+    authDomain: REACT_APP_authDomain,
+    projectId: REACT_APP_projectId,
+    storageBucket: REACT_APP_storageBucket,
+    messagingSenderId: REACT_APP_messagingSenderId,
+    appId: REACT_APP_appId
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+export default app;
