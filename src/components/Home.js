@@ -1,9 +1,8 @@
 import React from 'react';
-
 const Home = () => {
     return (
         <div>
-            Home
+            <p className='text-red-400'>Home</p>
         </div>
     );
 };
