@@ -1,14 +1,12 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import banner from '../banner.jpg'
-const Home = () => {
+import { useLoaderData } from 'react-router-dom';
+
+const Services = () => {
     const services = useLoaderData();
     return (
         <div>
-            <div>
-                <img src={banner} className='rounded' alt="" />
-            </div>
-            <div className='flex flex-row justify-evenly py-5'>
+
+            <div className='grid grid-cols-3 py-5 gap-2 justify-center'>
                 {
                     services.map(service => {
                         return (<div key={service._id} className="card w-96 bg-base-100 shadow-xl">
@@ -27,11 +25,8 @@ const Home = () => {
                     })
                 }
             </div>
-            <div>
-                <Link to='/services' className="btn btn-accent">See all</Link>
-            </div>
         </div>
     );
 };
 
-export default Home;
+export default Services;
