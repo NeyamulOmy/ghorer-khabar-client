@@ -9,10 +9,10 @@ const Header = () => {
                 <Link to='/' className="btn btn-ghost normal-case text-xl">Ghorer Khabar</Link>
             </div>
             <div className="flex-none font-bold">
-                <div className='mr-5'><Link>Services</Link></div>
-                <div className='mr-5'><Link>Login</Link></div>
-                <div className='mr-5'><Link>Sign up</Link></div>
-                <div className='mr-5'><Link>Blog</Link></div>
+                <div className='mr-5'><Link to='/services'>Services</Link></div>
+                <div className='mr-5'><Link to='/login'>Login</Link></div>
+                <div className='mr-5'><Link to='/signUp'>Sign up</Link></div>
+                <div className='mr-5'><Link to='/blog'>Blog</Link></div>
             </div>
         </div>
     );
