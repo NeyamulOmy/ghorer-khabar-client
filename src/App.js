@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -14,7 +14,8 @@ function App() {
         children: [
           {
             path: '/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch('http://localhost:5000/services')
           }
         ]
       }
