@@ -1,4 +1,5 @@
 import React from 'react';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const Services = () => {
@@ -10,9 +11,13 @@ const Services = () => {
                 {
                     services.map(service => {
                         return (<div key={service._id} className="card w-96 bg-base-100 shadow-xl">
-                            <figure className="px-10 pt-10">
-                                <img src={service.image} alt={service.name} className="rounded-xl" />
-                            </figure>
+                            <PhotoProvider>
+                                <figure className="px-10 pt-10">
+                                    <PhotoView src={service.image}>
+                                        <img src={service.image} alt={service.name} className="rounded-xl" />
+                                    </PhotoView>
+                                </figure>
+                            </PhotoProvider>
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">{service.name}</h2>
                                 <p>{service.description.slice(0, 100) + '...'}</p>
