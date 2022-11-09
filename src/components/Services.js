@@ -1,12 +1,12 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Services = () => {
     const services = useLoaderData();
     return (
         <div>
 
-            <div className='grid grid-cols-3 py-5 gap-2 justify-center'>
+            <div className='grid grid-cols-3 py-5 gap-2 justify-center lg:px-40'>
                 {
                     services.map(service => {
                         return (<div key={service._id} className="card w-96 bg-base-100 shadow-xl">
@@ -18,7 +18,8 @@ const Services = () => {
                                 <p>{service.description.slice(0, 100) + '...'}</p>
                                 <p><span className='font-bold'>Price:</span> {service.price} tk</p>
                                 <div className="card-actions">
-                                    <button className="btn btn-primary">Details</button>
+                                    <Link to={`./${service._id}`}><button className="btn btn-primary">Details</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>)

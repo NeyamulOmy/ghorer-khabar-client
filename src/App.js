@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './components/Main';
 import Home from './components/Home';
 import Services from './components/Services';
+import Details from './components/Details';
 
 function App() {
   const routes = createBrowserRouter(
@@ -22,6 +23,10 @@ function App() {
             path: '/services',
             element: <Services></Services>,
             loader: () => fetch('http://localhost:5000/services')
+          },
+          {
+            path: '/services/:id',
+            element: <Details></Details>
           }
         ]
       }
