@@ -9,8 +9,9 @@ import Details from './components/Details';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Blog from './components/Blog';
-import AddReviews from './components/AddReviews';
-
+import AddService from './components/AddService';
+import PrivateRoute from './PrivateRoute';
+import MyReview from './components/MyReview';
 function App() {
   const routes = createBrowserRouter(
     [
@@ -46,9 +47,15 @@ function App() {
             element: <Blog></Blog>
           },
           {
-            path: '/addReview/:id',
-            element: <AddReviews></AddReviews>
-          }
+            path: '/myreview',
+            element: <PrivateRoute><MyReview /></PrivateRoute>,
+
+          },
+          {
+            path: '/addService',
+            element: <PrivateRoute><AddService></AddService></PrivateRoute>,
+
+          },
         ]
       }
     ]
