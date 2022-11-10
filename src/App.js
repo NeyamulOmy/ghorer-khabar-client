@@ -9,6 +9,7 @@ import Details from './components/Details';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Blog from './components/Blog';
+import AddReviews from './components/AddReviews';
 
 function App() {
   const routes = createBrowserRouter(
@@ -43,6 +44,10 @@ function App() {
           {
             path: '/blog',
             element: <Blog></Blog>
+          },
+          {
+            path: '/addReview/:id',
+            element: <AddReviews></AddReviews>
           }
         ]
       }

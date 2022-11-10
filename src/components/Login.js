@@ -25,6 +25,9 @@ const Login = () => {
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
+                        <div>
+                            <button className="btn btn-sm btn-active btn-ghost">Login with Google</button>
+                        </div>
                     </div>
                 </div>
             </div>
