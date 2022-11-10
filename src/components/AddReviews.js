@@ -33,6 +33,7 @@ const AddReviews = ({ service }) => {
                 if (data.acknowledged) {
                     alert('Thanks for your feedback!')
                     event.target.reset();
+                    window.location.reload();
 
                 }
             })
@@ -43,7 +44,7 @@ const AddReviews = ({ service }) => {
             <h1>Add review!</h1>
             <form onSubmit={handleReview}>
                 <div>
-                    <textarea className='border' name="reviewText" id="" cols="100" placeholder='write your review here' rows="3"></textarea>
+                    <textarea className='border p-5' name="reviewText" id="" cols="100" placeholder='write your review here' rows="3"></textarea>
                 </div>
                 <div>
                     <button className='btn btn-warning' type="submit">Add review</button>
