@@ -14,10 +14,19 @@ const Reviews = ({ id }) => {
         <div>
             {
                 review.length ? review.map(rev =>
-                    <div>
-
+                    <div className='border p-5 rounded' key={rev._id}>
+                        <div className='flex align-middle'>
+                            <div className="avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={rev.img} alt="" />
+                                </div>
+                            </div>
+                            <h1 className='text-left text-sm font-semibold pt-3 ml-1'>{rev.customer}
+                                <span className='ml-2 text-xs text-yellow-800'>{rev.email}</span>
+                            </h1></div>
+                        <p className='text-left text-2xl'>{rev.reviewText}</p>
                     </div>) :
-                    <> <p className='text-center'>No Reviews posted yet!</p> </>
+                    <> <p className='text-center text-3xl text-rose-500'>No Reviews posted yet!</p> </>
 
 
             }

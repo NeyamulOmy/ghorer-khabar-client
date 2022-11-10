@@ -20,6 +20,23 @@ const AddReviews = ({ service }) => {
             img
 
         }
+        fetch('http://localhost:5000/reviews', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Thanks for your feedback!')
+                    event.target.reset();
+
+                }
+            })
+            .catch(er => console.error(er));
     }
     return (
         <div>
