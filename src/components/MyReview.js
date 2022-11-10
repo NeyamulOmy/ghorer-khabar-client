@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { useEffect, useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 const MyReview = () => {
     const { user, review, setreview } = useContext(AuthContext)
     const [show, setShow] = useState('');
     const [updateReview, setUpdateReview] = useState("")
+    const [modalReview, setModalReview] = useState("")
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
@@ -14,7 +15,20 @@ const MyReview = () => {
             .then(data => setreview(data))
     }, [user.email, setreview])
 
-    const handleShow = () => setShow('modal-open');
+    const handleReview = event => {
+        event.preventDefault();
+        const form = event.target;
+        const message = form.message.value;
+        setUpdateReview(message);
+    }
+    const handleShow = (rev) => {
+        const { reviewText } = rev;
+
+        setModalReview({ reviewText })
+        setShow('modal-open');
+
+        console.log(modalReview)
+    }
 
     const handleClose = () => {
         setShow('');
@@ -22,8 +36,8 @@ const MyReview = () => {
     }
     const handleStatusUpdate = id => {
 
-        setShow(false);
-        fetch(`https://server-six-kappa.vercel.app/reviews/${id}`, {
+        setShow('');
+        fetch(`https://localhost:5000/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -66,9 +80,6 @@ const MyReview = () => {
 
     }
 
-
-
-    console.log(review)
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -90,7 +101,7 @@ const MyReview = () => {
                                 </td>
                                 <td>{rev.reviewText}</td>
                                 <td>
-                                    <button className="btn btn-ghost text-2xl" onClick={handleShow}><FontAwesomeIcon icon={faPenToSquare} /></button>
+                                    <button className="btn btn-ghost text-2xl" onClick={() => handleShow(rev)}><FontAwesomeIcon icon={faPenToSquare} /></button>
                                     <button onClick={() => handleDelete(rev._id)} className="btn btn-ghost text-2xl">
                                         <FontAwesomeIcon icon={faTrash} />
                                     </button>
@@ -107,8 +118,15 @@ const MyReview = () => {
             <div className={`modal ${show}`}>
                 <div className="modal-box relative">
                     <label htmlFor="my-modal-3" onClick={handleClose} className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                    <h3 className="text-lg font-bold">Congratulations random Internet user!</h3>
-                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                    <form onSubmit={handleReview}>
+                        <div>
+                            <textarea className='border p-5' name="reviewText" id="" cols="50" placeholder='write your review here' defaultValue={modalReview.reviewText} rows="3"></textarea>
+
+                        </div>
+                        <div>
+                            <button className='btn btn-warning' type="submit">Add review</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
