@@ -12,7 +12,7 @@ const UpdateReview = () => {
         const updateReviewText = event.target.updateReviewText.value;
         console.log(updateReviewText)
         console.log(reviewId)
-        fetch(`http://localhost:5000/reviews/update/${reviewId}`, {
+        fetch(`https://ghorer-khabar-server.vercel.app/reviews/update/${reviewId}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

@@ -17,7 +17,7 @@ const AddService = () => {
             price,
             description
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://ghorer-khabar-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

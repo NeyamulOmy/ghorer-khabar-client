@@ -23,17 +23,17 @@ function App() {
           {
             path: '/',
             element: <Home></Home>,
-            loader: () => fetch('http://localhost:5000/services3')
+            loader: () => fetch('https://ghorer-khabar-server.vercel.app/services3')
           },
           {
             path: '/services',
             element: <Services></Services>,
-            loader: () => fetch('http://localhost:5000/services')
+            loader: () => fetch('https://ghorer-khabar-server.vercel.app/services')
           },
           {
             path: '/services/:id',
             element: <Details></Details>,
-            loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            loader: ({ params }) => fetch(`https://ghorer-khabar-server.vercel.app/services/${params.id}`)
           },
           {
             path: '/login',
@@ -60,7 +60,7 @@ function App() {
           {
             path: '/update/:id',
             element: <UpdateReview></UpdateReview>,
-            loader: ({ params }) => fetch(`http://localhost:5000/reviews/update/${params.id}`)
+            loader: ({ params }) => fetch(`https://ghorer-khabar-server.vercel.app/reviews/update/${params.id}`)
           }
         ]
       }
