@@ -1,3 +1,14 @@
+**#Live link:** https://ghorer-khabar-auth.web.app/
+
+**#Features:**
+  - Firebase authentication
+  - Mongobd
+  - vercel server hosting
+  - CRUD operations
+  - JWT
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
