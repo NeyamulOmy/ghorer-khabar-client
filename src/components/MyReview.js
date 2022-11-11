@@ -11,11 +11,16 @@ const MyReview = () => {
 
     useTitle('My reviews')
 
-    const { user, review, setreview } = useContext(AuthContext)
+    const { user, review, setreview, logOut } = useContext(AuthContext)
 
 
     useEffect(() => {
-        fetch(`https://ghorer-khabar-server.vercel.app/reviews?email=${user?.email}`)
+        fetch(`https://ghorer-khabar-server.vercel.app/reviews?email=${user?.email}`,
+            {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
             .then(res => res.json())
             .then(data => setreview(data))
     }, [user?.email, setreview])
@@ -28,7 +33,12 @@ const MyReview = () => {
             fetch(`https://ghorer-khabar-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
-                .then(res => res.json())
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        logOut();
+                    }
+                    return res.json()
+                })
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
