@@ -4,7 +4,9 @@ import { Link, useLoaderData } from 'react-router-dom';
 import Reviews from './Reviews';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
+import useTitle from '../Hooks/useTitle';
 const Details = () => {
+    useTitle("Service details")
     const service = useLoaderData();
     const { user } = useContext(AuthContext)
 

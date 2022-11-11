@@ -3,9 +3,10 @@ import { useContext } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth'
+import useTitle from '../Hooks/useTitle';
 
 const Login = () => {
-    //useTitle("Log In");
+    useTitle('Login')
     const { signIn, setLoading, handleGoogleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -81,7 +82,7 @@ const Login = () => {
                         </div>
                     </form>
                     <div>
-                        <button onClick={handleGoogle} className="btn btn-sm btn-active btn-ghost">Login with Google</button>
+                        <button onClick={handleGoogle} className="btn btn-sm btn-active btn-ghost mb-4">Login with Google</button>
                     </div>
                 </div>
             </div>

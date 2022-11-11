@@ -1,7 +1,9 @@
 import React from 'react';
 import image from '../sqlVsNoSql.png'
 import nodeImage from '../nodeVsJS.png'
+import useTitle from '../Hooks/useTitle';
 const Blog = () => {
+    useTitle("Blog")
     return (
         <div>
             <h1 className='text-center font-bold text-3xl'>Blog</h1>

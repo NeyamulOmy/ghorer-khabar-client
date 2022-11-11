@@ -4,11 +4,12 @@ import { AuthContext } from '../context/AuthProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import useTitle from '../Hooks/useTitle';
 
 
 const MyReview = () => {
 
-
+    useTitle('My reviews')
 
     const { user, review, setreview } = useContext(AuthContext)
 
