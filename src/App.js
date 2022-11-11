@@ -12,6 +12,7 @@ import Blog from './components/Blog';
 import AddService from './components/AddService';
 import PrivateRoute from './PrivateRoute';
 import MyReview from './components/MyReview';
+import UpdateReview from './components/UpdateReview';
 function App() {
   const routes = createBrowserRouter(
     [
@@ -56,6 +57,11 @@ function App() {
             element: <PrivateRoute><AddService></AddService></PrivateRoute>,
 
           },
+          {
+            path: '/update/:id',
+            element: <UpdateReview></UpdateReview>,
+            loader: ({ params }) => fetch(`http://localhost:5000/reviews/update/${params.id}`)
+          }
         ]
       }
     ]
