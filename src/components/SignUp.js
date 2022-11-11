@@ -6,9 +6,17 @@ import useTitle from '../Hooks/useTitle';
 const SignUp = () => {
     useTitle('Sign up')
 
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, loading } = useContext(AuthContext);
+
     const navigate = useNavigate();
     const location = useLocation();
+    if (loading) {
+        return (
+
+            <div className="radial-progress" style={{ "--value": 99 }}>99%</div>
+
+        )
+    }
 
     const from = location.state?.from?.pathname || '/';
     const handleSubmit = event => {

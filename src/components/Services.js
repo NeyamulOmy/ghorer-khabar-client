@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import useTitle from '../Hooks/useTitle';
-
+import { AuthContext } from '../context/AuthProvider';
 
 const Services = () => {
     useTitle('Services')
     const services = useLoaderData();
+    const { loading } = useContext(AuthContext)
+    if (loading) {
+        return (
+
+            <div className="radial-progress" style={{ "--value": 99 }}>99%</div>
+
+        )
+    }
     return (
         <div>
 
