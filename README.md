@@ -1,11 +1,11 @@
 **#Live link:** https://ghorer-khabar-auth.web.app/
 
 **#Features:**
-  -Firebase authentication
-  -Mongobd
-  -vercel server hosting
-  -CRUD operations
-  -JWT
+  - Firebase authentication
+  - Mongobd
+  - vercel server hosting
+  - CRUD operations
+  - JWT
 
 
 
