@@ -67,7 +67,7 @@ function App() {
     ]
   )
   return (
-    <div className="App mx-10">
+    <div className="App lg:mx-10">
 
       <RouterProvider router={routes}></RouterProvider>
     </div>

@@ -16,7 +16,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved by Neyamul Haque Omy</p>
+                <p>Copyright © {new Date().getFullYear()} <br />All right reserved by Neyamul Haque Omy</p>
             </div>
         </footer>
     );

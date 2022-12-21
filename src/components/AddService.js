@@ -37,8 +37,9 @@ const AddService = () => {
 
     }
     return (
+
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col ">
+            <div className=" flex-col ">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Add a new item</h1>
 
@@ -68,6 +69,7 @@ const AddService = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

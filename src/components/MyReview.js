@@ -55,12 +55,12 @@ const MyReview = () => {
             <h1 className='text-center mt-5 font-semibold text-3xl mb-5'>My Reviews</h1>
 
             {
-                review.length ? <div className="overflow-x-auto">
+                review.length ? <div className=" overflow-auto rounded-lg shadow">
                     <table className="table w-full">
                         <thead>
                             <tr>
                                 <th>Service</th>
-                                <th>Review</th>
+                                <th >Review</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>

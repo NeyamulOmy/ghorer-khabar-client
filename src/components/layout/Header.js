@@ -15,35 +15,35 @@ const Header = () => {
         <div className="navbar bg-neutral text-white">
             <div className="flex-1">
                 <img className='h-10' src={logo} alt="" />
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Ghorer Khabar</Link>
+                <Link to='/' className="btn btn-ghost normal-case hidden text-sm lg:text-xl lg:flex">Ghorer Khabar</Link>
             </div>
             <div className="flex-none font-bold">
-                <div className='mr-5'><Link to='/services'>Services</Link></div>
+                <div className=' mr-2 lg:mr-5 text-xs lg:text-base'><Link to='/services'>Services</Link></div>
 
 
                 {
                     user?.uid ?
                         <>
 
-                            <div className='mr-5'><Link to='/myreview'>My Reviews </Link></div>
-                            <div className='mr-5'><Link to='/addService'>Add Services</Link></div>
-                            <div className='mr-5'> <button onClick={handleLogOut} variant="danger">Log out</button>  </div>
+                            <div className=' mr-2 lg:mr-5'><Link className='text-xs lg:text-base' to='/myreview'>My Reviews </Link></div>
+                            <div className=' mr-2 lg:mr-5'><Link className='text-xs lg:text-base' to='/addService'>Add Services</Link></div>
+                            <div className=' mr-2 lg:mr-5'> <button onClick={handleLogOut} variant="danger" className='text-xs lg:text-base' >Log out</button>  </div>
 
                         </>
                         :
                         <>
-                            <div className='mr-5'><Link to='/login'>Login</Link></div>
-                            <div className='mr-5'><Link to='/signUp'>Sign up</Link></div>
+                            <div className=' mr-2 lg:mr-5'><Link className='text-xs lg:text-base' to='/login'>Login</Link></div>
+                            <div className=' mr-2 lg:mr-5'><Link className='text-xs lg:text-base' to='/signUp'>Sign up</Link></div>
 
                         </>
                 }
                 {user?.photoURL ?
                     <><div className="avatar">
-                        <div className="w-10 rounded-full">
+                        <div className="w-8 rounded-full">
                             <img src={user?.photoURL} alt="" />
                         </div>
                     </div>
-                        {user?.displayName} </>
+                        <span className=' hidden text-xs lg:flex lg:text-base'>{user?.displayName}</span> </>
                     : <></>
                 }
 
@@ -51,7 +51,7 @@ const Header = () => {
 
 
 
-                <div className='ml-5 mr-5'><Link to='/blog'>Blog</Link></div>
+                <div className='text-xs lg:text-base mr-2 ml-1 lg:ml-5 lg:mr-5'><Link to='/blog'>Blog</Link></div>
             </div>
         </div>
     );

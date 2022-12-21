@@ -7,7 +7,7 @@ const Blog = () => {
     return (
         <div>
             <h1 className='text-center font-bold text-3xl'>Blog</h1>
-            <div className='m-10 p-10 px-96 bg-stone-200 rounded-md'>
+            <div className='m-2 p-2 lg:m-10 lg:p-10 lg:px-96 bg-stone-200 rounded-md'>
                 <div className='mb-10'>
                     <h1 className='text-2xl font-semibold'>Difference between SQL and NoSQL</h1>
                     <p className='flex justify-center'><img src={image} alt="" /></p>
